@@ -1,0 +1,46 @@
+local workspace = game:GetService("Workspace")
+
+local fpsArms = workspace.Ignore.FPSArms
+
+local material = Enum.Material.ForceField
+local color = Color3.fromRGB(98, 37, 209)
+
+for _, part in pairs(fpsArms:GetDescendants()) do
+    if part:IsA("BasePart") then
+        part.Material = material
+        part.Color = color
+    end
+end
+
+local skybox = Instance.new("Sky")
+skybox.Parent = game.Lighting
+skybox.SkyboxBk = "http://www.roblox.com/asset/?id=159454299"
+skybox.SkyboxDn = "http://www.roblox.com/asset/?id=159454296"
+skybox.SkyboxFt = "http://www.roblox.com/asset/?id=159454293"
+skybox.SkyboxLf = "http://www.roblox.com/asset/?id=159454286"
+skybox.SkyboxRt = "http://www.roblox.com/asset/?id=159454300"
+skybox.SkyboxUp = "http://www.roblox.com/asset/?id=159454288"
+skybox.StarCount = 5000
+
+game:GetService("ReplicatedStorage").Bullet.Trail.Lifetime = 20
+game:GetService("ReplicatedStorage").Bullet.Trail.Brightness = 100
+game:GetService("ReplicatedStorage").Bullet.Trail.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))
+})
+
+game:GetService("ReplicatedStorage").Arrow.Trail.Lifetime = 20
+game:GetService("ReplicatedStorage").Arrow.Trail.Brightness = 100
+game:GetService("ReplicatedStorage").Arrow.Trail.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))
+})
+
+game:GetService("ReplicatedStorage").Laser.Trail.Lifetime = 20
+game:GetService("ReplicatedStorage").Laser.Trail.Brightness = 100
+game:GetService("ReplicatedStorage").Laser.Trail.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))
+})
+
+end)
